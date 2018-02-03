@@ -4,6 +4,11 @@
     <artifactId>spark-sample-service</artifactId>
     <version>1.0</version>
     <name>spark-sample-service</name>
+
+    <properties>
+        <awsAccountId>Enter account id here</awsAccountId>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.sparkjava</groupId>
@@ -39,7 +44,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <repository>427866372521.dkr.ecr.eu-central-1.amazonaws.com/spark-sample-service</repository>
+                    <repository>${awsAccountId}.dkr.ecr.eu-central-1.amazonaws.com/${project.name}</repository>
                     <tag>${project.version}</tag>
                     <buildArgs>
                         <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
